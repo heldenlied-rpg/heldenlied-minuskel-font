@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="1000"
+   height="1000"
+   viewBox="0 0 1000 1000"
+   version="1.1"
+   id="svg1"
+   sodipodi:docname="quotedouble.ss06.svg"
+   inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:document-units="px"
+     showguides="true"
+     inkscape:current-layer="layer1"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="0.5835"
+     inkscape:cx="700.94259"
+     inkscape:cy="77.977721"
+     inkscape:window-width="1970"
+     inkscape:window-height="1211"
+     inkscape:window-x="861"
+     inkscape:window-y="82"
+     inkscape:window-maximized="0">
+    <sodipodi:guide
+       position="500,1244"
+       orientation="0,1"
+       id="guide1"
+       inkscape:label="Lange Oberlaenge"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="500,1000"
+       orientation="0,1"
+       id="guide2"
+       inkscape:label="Oberlaenge"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="500,835"
+       orientation="0,1"
+       id="guide3"
+       inkscape:label="t-Hoehe"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="500,753"
+       orientation="0,1"
+       id="guide4"
+       inkscape:label="x-Hoehe Ueberschuss"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="500,743"
+       orientation="0,1"
+       id="guide5"
+       inkscape:label="x-Hoehe"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="500,293"
+       orientation="0,1"
+       id="guide6"
+       inkscape:label="Grundlinie"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="500,283"
+       orientation="0,1"
+       id="guide7"
+       inkscape:label="Grundlinie Ueberschuss"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="500,0"
+       orientation="0,1"
+       id="guide8"
+       inkscape:label="Unterlaenge"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="500,-10"
+       orientation="0,1"
+       id="guide9"
+       inkscape:label="Unterlaenge Ueberschuss"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="500,500"
+       orientation="-1000,0"
+       id="guide99"
+       inkscape:label="Mitte"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="636.67524,500"
+       orientation="0,1"
+       id="guide10"
+       inkscape:locked="false"
+       inkscape:label=""
+       inkscape:color="rgb(0,134,229)" />
+  </sodipodi:namedview>
+  <g
+     inkscape:label="Ebene 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       id="path3"
+       style="fill:#000000;stroke:#000000;stroke-width:0"
+       inkscape:label="Ausrufezeichen"
+       d="M 430.84375 246.98633 C 430.20698 246.99993 429.62041 247.05095 429.08398 247.11523 C 411.90881 249.26222 349.65091 353.37322 347.50391 361.96094 C 345.3568 370.54854 358.2453 375.93256 367.90625 380.22656 C 439.82728 414.57702 396.8966 481.13019 380.79492 504.74609 C 364.69313 528.36199 367.90162 548.75159 402.25195 515.47461 C 436.60229 482.19778 476.32503 385.58148 496.7207 327.61523 C 516.47881 271.46052 450.59479 246.53933 430.84375 246.98828 L 430.84375 246.98633 z M 582.54883 247.70898 C 581.91206 247.72258 581.32745 247.77361 580.79102 247.83789 C 563.61585 249.98488 501.35598 354.09587 499.20898 362.68359 C 497.06187 371.27119 509.95038 376.65522 519.61133 380.94922 C 591.53236 415.29968 548.60168 481.85285 532.5 505.46875 C 516.39821 529.08465 519.6067 549.47425 553.95703 516.19727 C 588.30737 482.92044 628.03011 386.30414 648.42578 328.33789 C 668.18389 272.18318 602.29987 247.26394 582.54883 247.71289 L 582.54883 247.70898 z " />
+  </g>
+</svg>

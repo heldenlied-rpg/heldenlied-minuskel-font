@@ -1,0 +1,7 @@
+# This is the official list of Heldenlied Minuskel project authors
+# for copyright purposes.
+# Names should be added to this file as:
+#   Name <email address>
+# The email address is not required.
+
+Richard Westebbe <r.westebbe@heldenlied-rpg.de>

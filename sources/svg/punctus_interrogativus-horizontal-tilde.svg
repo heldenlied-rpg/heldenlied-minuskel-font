@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="1000"
+   height="1000"
+   viewBox="0 0 1000 1000"
+   version="1.1"
+   id="svg1"
+   sodipodi:docname="punctus_interrogativus-horizontal-tilde.svg"
+   inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:document-units="px"
+     showguides="true"
+     inkscape:current-layer="layer1"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="0.5835"
+     inkscape:cx="585.26135"
+     inkscape:cy="211.65381"
+     inkscape:window-width="1970"
+     inkscape:window-height="1211"
+     inkscape:window-x="1259"
+     inkscape:window-y="102"
+     inkscape:window-maximized="0">
+    <sodipodi:guide
+       position="500,1244"
+       orientation="0,1"
+       id="guide1"
+       inkscape:label="Lange Oberlaenge"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="500,1000"
+       orientation="0,1"
+       id="guide2"
+       inkscape:label="Oberlaenge"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="500,835"
+       orientation="0,1"
+       id="guide3"
+       inkscape:label="t-Hoehe"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="500,753"
+       orientation="0,1"
+       id="guide4"
+       inkscape:label="x-Hoehe Ueberschuss"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="500,743"
+       orientation="0,1"
+       id="guide5"
+       inkscape:label="x-Hoehe"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="500,293"
+       orientation="0,1"
+       id="guide6"
+       inkscape:label="Grundlinie"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="500,283"
+       orientation="0,1"
+       id="guide7"
+       inkscape:label="Grundlinie Ueberschuss"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="500,0"
+       orientation="0,1"
+       id="guide8"
+       inkscape:label="Unterlaenge"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="500,-10"
+       orientation="0,1"
+       id="guide9"
+       inkscape:label="Unterlaenge Ueberschuss"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="500,500"
+       orientation="-1000,0"
+       id="guide99"
+       inkscape:label="Mitte"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="636.67524,500"
+       orientation="0,1"
+       id="guide10"
+       inkscape:locked="false"
+       inkscape:label=""
+       inkscape:color="rgb(0,134,229)" />
+  </sodipodi:namedview>
+  <g
+     inkscape:label="Ebene 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       id="path3-4"
+       style="fill:#000000;stroke:#000000;stroke-width:0"
+       d="m 735.10773,252.78679 c 0,8.1952 31.40442,32.78413 17.74547,54.6382 -49.84708,55.38494 -122.73524,-101.24337 -177.27414,-49.43376 -10.92705,9.56127 -83.60359,98.62426 -89.06693,112.28314 -7.8978,13.65887 0.769,19.41767 10.3298,9.85639 9.56128,-9.56132 31.72169,-34.46458 49.47816,-39.92778 17.75634,-5.46381 68.65861,41.7079 91.42985,58.74972 19.88828,14.88425 46.52021,20.51007 80.66741,1.38747 90.30869,-58.08852 119.1224,-169.40478 121.85198,-180.3318 2.72968,-10.92705 -20.4948,-55.99467 -31.90239,-55.37349 -11.40759,0.62119 -73.25921,80.0206 -73.25921,88.15191 z M 504.25772,430.03686 c 0,0 -72.38365,64.20029 -72.38365,90.15182 0,25.95167 40.98309,51.9125 57.37348,50.54629 16.39073,-1.36483 79.2131,-73.76202 72.38365,-99.71369 -6.82941,-25.95201 -51.90981,-40.98442 -57.37348,-40.98442 z"
+       inkscape:label="punctus interoggativus horizontal tilde"
+       sodipodi:nodetypes="scccccscscscscsc" />
+  </g>
+</svg>

@@ -1,0 +1,73 @@
+FONTLOG for Heldenlied Minuskel
+===============================
+
+This file provides detailed information on the Heldenlied Minuskel
+Font Software. This information should be distributed along with the
+Heldenlied Minuskel fonts and any derivative works.
+
+
+Basic Font Information
+----------------------
+
+Heldenlied Minuskel is a Carolingian minuscule display typeface
+inspired by and modelled on the Folchart Psalter (St. Gallen, Stiftsbibliothek,
+Cod. Sang. 23, 9th century). It was created for the tabletop RPG
+"Heldenlied – Das Schicksal der Helden" (https://heldenlied-rpg.de)
+and is intended for titles, logos, handouts and atmospheric text.
+
+Glyphs are drawn in Inkscape and assembled in FontForge.
+OpenType features: liga, calt, stylistic sets (see README.md).
+
+
+ChangeLog
+---------
+
+2026-09-24 (Richard Westebbe) Heldenlied Minuskel Version 0.3
+- First public release
+- Redrawn c, g, o, p, t, v and z based on the Folchart Psalter
+- Optimised the width of h
+- Raised o to provide proper overshoot
+- Harmonised entry strokes and serifs across all glyphs; sidebearings reset
+- Added umlauts ä, ö, ü in the historical form with superscript e
+- Added æ and macron vowels ā, ē, ī, ō, ū
+- Added combining macron (U+0304) with mark attachment (GPOS)
+- Added period and semicolon
+- Added historical punctuation: reversed semicolon (U+204F) and
+  punctus elevatus (U+2E4E)
+- v, w and j now show historical forms by default (u-, uu- and i-forms);
+  modern forms available in ss06
+- Added ligatures f_f and longs_longs to resolve ascender collisions
+- Added glyphs f.asc, f_f.asc, longs.asc and longs_longs.asc
+  (shortened crossbar before ascenders)
+- Added late-medieval numerals (modern numerals in ss06)
+- Added z glyph as ß (ß contained in ss06)
+- Automatic replace of ss with z for historical correctness
+- Uppercase codepoints temporarily mapped to lowercase forms
+  until dedicated capitals are available
+- Renamed stylistic set "Modern readability" from ss04 to ss06;
+  ss06 now also contains two-dot umlauts and modern w
+- Added German and English feature names for ss01 and ss06
+- Removed DSIG table and Mac platform name records
+- Removed all kerning; kerning will be rebuilt in a later version
+- Automatic conversion of numbers 1–100 into Roman numerals (calt)
+- Added t_t ligature
+- Added symbols & and §
+- Long s (ſ) used throughout by default, as in the Folchart Psalter; round s in ss06
+
+Versions 0.1 and 0.2 were unpublished internal development versions.
+
+Acknowledgements
+----------------
+
+If you make modifications be sure to add your name (N), email (E),
+web-address (W) and description (D). This list is in alphabetical
+order.
+
+N: Richard Westebbe
+E: 
+W: https://heldenlied-rpg.de
+D: Designer
+
+Historical source: Cod. Sang. 23, digitised by e-codices –
+Virtual Manuscript Library of Switzerland (https://www.e-codices.ch)
+

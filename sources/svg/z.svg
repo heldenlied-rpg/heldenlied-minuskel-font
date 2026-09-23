@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="1000"
+   height="1000"
+   viewBox="0 0 1000 1000"
+   version="1.1"
+   id="svg1"
+   sodipodi:docname="z.svg"
+   inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:document-units="px"
+     showguides="true"
+     inkscape:current-layer="layer1"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="0.5835"
+     inkscape:cx="760.92545"
+     inkscape:cy="545.84404"
+     inkscape:window-width="1626"
+     inkscape:window-height="1211"
+     inkscape:window-x="1715"
+     inkscape:window-y="55"
+     inkscape:window-maximized="0">
+    <sodipodi:guide
+       position="500,1244"
+       orientation="0,1"
+       id="guide1"
+       inkscape:label="Lange Oberlaenge"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="500,1000"
+       orientation="0,1"
+       id="guide2"
+       inkscape:label="Oberlaenge"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="500,835"
+       orientation="0,1"
+       id="guide3"
+       inkscape:label="t-Hoehe"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="500,753"
+       orientation="0,1"
+       id="guide4"
+       inkscape:label="x-Hoehe Ueberschuss"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="500,743"
+       orientation="0,1"
+       id="guide5"
+       inkscape:label="x-Hoehe"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="500,293"
+       orientation="0,1"
+       id="guide6"
+       inkscape:label="Grundlinie"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="500,283"
+       orientation="0,1"
+       id="guide7"
+       inkscape:label="Grundlinie Ueberschuss"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="500,0"
+       orientation="0,1"
+       id="guide8"
+       inkscape:label="Unterlaenge"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="500,-10"
+       orientation="0,1"
+       id="guide9"
+       inkscape:label="Unterlaenge Ueberschuss"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="500,500"
+       orientation="-1000,0"
+       id="guide99"
+       inkscape:label="Mitte"
+       inkscape:locked="false" />
+  </sodipodi:namedview>
+  <g
+     inkscape:label="Ebene 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       style="fill:#000000;stroke:#000000;stroke-width:0"
+       d="m 317.37203,333.63608 c 0,0 80.21033,-57.58679 96.6637,-64.78522 16.45336,-7.19829 61.70007,-25.70831 98.72023,0 37.0201,25.70844 22.62339,27.76507 49.36003,27.76507 26.73681,0 62.72861,-3.08478 117.23041,-32.90673 18.51,-11.31171 45.4182,-2.46208 23.6518,13.36835 -45.2468,32.90685 -223.14899,250.91418 -273.53749,315.69927 28.79347,-8.2267 75.99759,-37.38047 110.0319,-31.87848 23.72054,3.83464 43.19009,39.0769 59.64359,55.53027 20.5668,-6.17004 62.7287,-38.04852 75.0686,-46.27521 12.3401,-8.22668 70.9553,-25.70842 23.6516,20.56678 -47.3033,46.27508 -136.01505,116.24843 -190.24199,116.20197 -54.19234,-0.0493 -40.10531,-46.2751 -67.87037,-48.33173 -27.76507,-2.05677 -64.7851,27.76507 -79.18182,30.84997 -14.39673,3.08477 -49.36011,24.68017 -76.09692,10.28344 12.33996,-34.9635 272.50912,-329.06762 279.70748,-341.4077 -15.42504,0 -63.75681,28.79345 -99.74856,25.70844 -35.99189,-3.08527 -63.75696,-51.41675 -80.21034,-51.41675 -16.45336,0 -39.07678,18.51001 -52.44511,24.68005 -13.36835,6.16993 -51.41676,11.31171 -14.39674,-23.65179 z"
+       id="path1"
+       sodipodi:nodetypes="cssscscscsssssccsssc"
+       inkscape:label="z" />
+  </g>
+</svg>
