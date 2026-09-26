@@ -1,5 +1,9 @@
 * text=auto
-*.svg  text eol=lf
-*.sfd  text eol=lf
-*.fea  text eol=lf
-*.otf  binary
+*.svg    text eol=lf
+*.fea    text eol=lf
+*.glif   text eol=lf
+*.plist  text eol=lf
+*.py     text eol=lf
+*.otf    binary
+*.ttf    binary
+*.woff2  binary

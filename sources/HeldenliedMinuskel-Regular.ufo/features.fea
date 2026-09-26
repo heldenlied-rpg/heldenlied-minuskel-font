@@ -1,0 +1,472 @@
+# Heldenlied Minuskel – OpenType-Features (ab Version 0.4)
+#
+# Standard: moderne, lesbare Formen.
+# Historische Formen (Folchart-Psalter) über `hist` bzw. ss20.
+#
+# Die Reihenfolge der Lookup-Definitionen ist die Anwendungsreihenfolge.
+# Wichtig: römische Zahlen vor den spätmittelalterlichen Ziffern,
+# ss->ß vor dem langen s, das lange s vor seinen Ligaturen/Varianten.
+
+languagesystem DFLT dflt;
+languagesystem latn dflt;
+
+# ---------------------------------------------------------------
+# Klassen
+# ---------------------------------------------------------------
+
+@DIGITS      = [zero one two three four five six seven eight nine];
+@DIGITS_1_9  = [one two three four five six seven eight nine];
+@ASCENDERS   = [b h k l b.ss01 h.ss01 k.ss01 l.ss01];
+@VOWELS      = [a e i o u y adieresis odieresis udieresis
+                A E I O U Y Adieresis Odieresis Udieresis];
+
+# ---------------------------------------------------------------
+# ccmp: i vor dem Titulus ohne Punkt
+# ---------------------------------------------------------------
+
+lookup ccmp_dotless_i_sub {
+    sub i by dotlessi;
+} ccmp_dotless_i_sub;
+
+lookup ccmp_dotless_i {
+    sub i' lookup ccmp_dotless_i_sub uni0304;
+} ccmp_dotless_i;
+
+# ---------------------------------------------------------------
+# liga / calt (Standard)
+# ---------------------------------------------------------------
+
+lookup liga_carolingian {
+    sub t i by t_i;
+    sub t u by t_u;
+    sub f odieresis by f_odieresis;
+    sub f udieresis by f_udieresis;
+    sub f adieresis by f_adieresis;
+    # Versalien zeigen vorerst Kleinbuchstabenformen
+    sub T i by t_i;
+    sub T u by t_u;
+    sub F odieresis by f_odieresis;
+    sub F udieresis by f_udieresis;
+    sub F adieresis by f_adieresis;
+} liga_carolingian;
+
+lookup liga_collision {
+    sub t t by t_t;
+    sub f f by f_f;
+} liga_collision;
+
+lookup single_short_f {
+    sub f by f.asc;
+    sub F by f.asc;
+} single_short_f;
+
+lookup calt_short_f {
+    sub [f F]' lookup single_short_f @ASCENDERS;
+} calt_short_f;
+
+# ---------------------------------------------------------------
+# ss01: Hohe Oberlängen
+# ---------------------------------------------------------------
+
+lookup ss01_tall_ascenders {
+    sub b by b.ss01;
+    sub d by d.ss01;
+    sub l by l.ss01;
+    sub h by h.ss01;
+    sub k by k.ss01;
+    sub B by B.ss01;
+    sub D by D.ss01;
+    sub H by H.ss01;
+    sub K by K.ss01;
+    sub L by L.ss01;
+} ss01_tall_ascenders;
+
+# ---------------------------------------------------------------
+# ss07: Spätmittelalterliche Ziffern
+# ---------------------------------------------------------------
+# Läuft vor den römischen Zahlen und ersetzt alle Ziffern. Dadurch
+# erkennen die römischen Regeln keine Ziffern mehr: ss07 hat Vorrang
+# vor ss05 und vor den römischen Zahlen in hist/ss20.
+
+lookup ss07_numerals {
+    sub zero by zero.hist;
+    sub one by one.hist;
+    sub two by two.hist;
+    sub three by three.hist;
+    sub four by four.hist;
+    sub five by five.hist;
+    sub six by six.hist;
+    sub seven by seven.hist;
+    sub eight by eight.hist;
+    sub nine by nine.hist;
+} ss07_numerals;
+
+# ---------------------------------------------------------------
+# Römische Zahlen 1–3999 (ss05, hist, ss20)
+# ---------------------------------------------------------------
+# Additive Zählweise wie im Frühmittelalter (iiii, uiiii, dcccc).
+# Eine Zahl wird in vier Durchgängen umgewandelt, von der höchsten
+# Stelle zur niedrigsten. So sieht jeder Durchgang rechts noch die
+# unveränderten Ziffern. Die zuerst umgewandelte Stelle beginnt mit
+# einem Punctus, die Einer schließen mit einem Punctus.
+# roman.null (breitenlos, leer) markiert eine angefangene Zahl.
+# Nicht umgewandelt werden: 0, Zahlen ab 4000, Zahlen mit mehr als
+# vier Stellen sowie Dezimalzahlen und Uhrzeiten (3,5 / 12:30).
+# Ein Punkt oder Komma direkt hinter der Zahl geht im Punctus auf, dadurch
+# wird aus 26.9.872 automatisch ·xxui·ix·dccclxxii·.
+
+@ROMAN_SEP = [comma colon];
+
+lookup R_THOUSANDS_FIRST {
+    sub zero by periodcentered roman.null;
+    sub one by periodcentered m roman.null;
+    sub two by periodcentered m m roman.null;
+    sub three by periodcentered m m m roman.null;
+} R_THOUSANDS_FIRST;
+
+lookup R_HUNDREDS_FIRST {
+    sub zero by periodcentered roman.null;
+    sub one by periodcentered c roman.null;
+    sub two by periodcentered c c roman.null;
+    sub three by periodcentered c c c roman.null;
+    sub four by periodcentered c c c c roman.null;
+    sub five by periodcentered d roman.null;
+    sub six by periodcentered d c roman.null;
+    sub seven by periodcentered d c c roman.null;
+    sub eight by periodcentered d c c c roman.null;
+    sub nine by periodcentered d c c c c roman.null;
+} R_HUNDREDS_FIRST;
+
+lookup R_HUNDREDS_CONT {
+    sub zero by roman.null;
+    sub one by c roman.null;
+    sub two by c c roman.null;
+    sub three by c c c roman.null;
+    sub four by c c c c roman.null;
+    sub five by d roman.null;
+    sub six by d c roman.null;
+    sub seven by d c c roman.null;
+    sub eight by d c c c roman.null;
+    sub nine by d c c c c roman.null;
+} R_HUNDREDS_CONT;
+
+lookup R_TENS_FIRST {
+    sub zero by periodcentered roman.null;
+    sub one by periodcentered x roman.null;
+    sub two by periodcentered x x roman.null;
+    sub three by periodcentered x x x roman.null;
+    sub four by periodcentered x x x x roman.null;
+    sub five by periodcentered l roman.null;
+    sub six by periodcentered l x roman.null;
+    sub seven by periodcentered l x x roman.null;
+    sub eight by periodcentered l x x x roman.null;
+    sub nine by periodcentered l x x x x roman.null;
+} R_TENS_FIRST;
+
+lookup R_TENS_CONT {
+    sub zero by roman.null;
+    sub one by x roman.null;
+    sub two by x x roman.null;
+    sub three by x x x roman.null;
+    sub four by x x x x roman.null;
+    sub five by l roman.null;
+    sub six by l x roman.null;
+    sub seven by l x x roman.null;
+    sub eight by l x x x roman.null;
+    sub nine by l x x x x roman.null;
+} R_TENS_CONT;
+
+lookup R_UNITS_FIRST {
+    sub zero by periodcentered periodcentered;
+    sub one by periodcentered i.hist periodcentered;
+    sub two by periodcentered i.hist i.hist periodcentered;
+    sub three by periodcentered i.hist i.hist i.hist periodcentered;
+    sub four by periodcentered i.hist i.hist i.hist i.hist periodcentered;
+    sub five by periodcentered u periodcentered;
+    sub six by periodcentered u i.hist periodcentered;
+    sub seven by periodcentered u i.hist i.hist periodcentered;
+    sub eight by periodcentered u i.hist i.hist i.hist periodcentered;
+    sub nine by periodcentered u i.hist i.hist i.hist i.hist periodcentered;
+} R_UNITS_FIRST;
+
+lookup R_UNITS_CONT {
+    sub zero by periodcentered;
+    sub one by i.hist periodcentered;
+    sub two by i.hist i.hist periodcentered;
+    sub three by i.hist i.hist i.hist periodcentered;
+    sub four by i.hist i.hist i.hist i.hist periodcentered;
+    sub five by u periodcentered;
+    sub six by u i.hist periodcentered;
+    sub seven by u i.hist i.hist periodcentered;
+    sub eight by u i.hist i.hist i.hist periodcentered;
+    sub nine by u i.hist i.hist i.hist i.hist periodcentered;
+} R_UNITS_CONT;
+
+lookup ROMAN_THOUSANDS {
+    ignore sub @DIGITS' @DIGITS @DIGITS @DIGITS @DIGITS;
+    ignore sub @DIGITS' @DIGITS @DIGITS @DIGITS @ROMAN_SEP @DIGITS;
+    ignore sub [four five six seven eight nine]' @DIGITS @DIGITS @DIGITS;
+    ignore sub @DIGITS @DIGITS';
+    ignore sub @DIGITS @ROMAN_SEP @DIGITS';
+    ignore sub zero' zero zero zero;
+    sub [zero one two three]' lookup R_THOUSANDS_FIRST @DIGITS @DIGITS @DIGITS;
+} ROMAN_THOUSANDS;
+
+lookup ROMAN_HUNDREDS {
+    ignore sub @DIGITS' @DIGITS @DIGITS @DIGITS;
+    ignore sub @DIGITS' @DIGITS @DIGITS @ROMAN_SEP @DIGITS;
+    sub roman.null @DIGITS' lookup R_HUNDREDS_CONT @DIGITS @DIGITS;
+    ignore sub @DIGITS @DIGITS';
+    ignore sub @DIGITS @ROMAN_SEP @DIGITS';
+    ignore sub zero' zero zero;
+    sub @DIGITS' lookup R_HUNDREDS_FIRST @DIGITS @DIGITS;
+} ROMAN_HUNDREDS;
+
+lookup ROMAN_TENS {
+    ignore sub @DIGITS' @DIGITS @DIGITS;
+    ignore sub @DIGITS' @DIGITS @ROMAN_SEP @DIGITS;
+    sub roman.null @DIGITS' lookup R_TENS_CONT @DIGITS;
+    ignore sub @DIGITS @DIGITS';
+    ignore sub @DIGITS @ROMAN_SEP @DIGITS';
+    ignore sub zero' zero;
+    sub @DIGITS' lookup R_TENS_FIRST @DIGITS;
+} ROMAN_TENS;
+
+lookup ROMAN_UNITS {
+    ignore sub @DIGITS' @DIGITS;
+    ignore sub @DIGITS' @ROMAN_SEP @DIGITS;
+    sub roman.null @DIGITS' lookup R_UNITS_CONT;
+    ignore sub @DIGITS @DIGITS';
+    ignore sub @DIGITS @ROMAN_SEP @DIGITS';
+    ignore sub zero';
+    sub @DIGITS' lookup R_UNITS_FIRST;
+} ROMAN_UNITS;
+
+# Punkt oder Komma hinter der Zahl und doppelten Punctus zusammenfassen
+lookup ROMAN_PUNCT {
+    sub periodcentered period by periodcentered;
+    sub periodcentered comma by periodcentered;
+} ROMAN_PUNCT;
+
+lookup ROMAN_DOT_MERGE {
+    sub periodcentered periodcentered by periodcentered;
+} ROMAN_DOT_MERGE;
+
+# ---------------------------------------------------------------
+# Historische Formen (hist, ss20)
+# ---------------------------------------------------------------
+
+# ss -> ß (dargestellt als z), außer vor Vokal und in „auss…“
+lookup SS_TO_ESZETT {
+    sub s s by germandbls;
+} SS_TO_ESZETT;
+
+lookup hist_ss_eszett {
+    ignore sub s' s' @VOWELS;
+    ignore sub [a A] u s' s';
+    sub s' lookup SS_TO_ESZETT s';
+} hist_ss_eszett;
+
+# Langes s durchgehend, wie im Folchart-Psalter
+lookup hist_longs {
+    sub s by longs;
+} hist_longs;
+
+lookup hist_longs_liga {
+    sub longs longs by longs_longs;
+} hist_longs_liga;
+
+# Historische Buchstaben, Umlaute, ß und Satzzeichen
+lookup hist_forms {
+    sub i by i.hist;
+    sub j by j.hist;
+    sub v by v.hist;
+    sub w by w.hist;
+    sub J by j.hist;
+    sub V by v.hist;
+    sub W by w.hist;
+    sub adieresis by adieresis.hist;
+    sub odieresis by odieresis.hist;
+    sub udieresis by udieresis.hist;
+    sub Adieresis by adieresis.hist;
+    sub Odieresis by odieresis.hist;
+    sub Udieresis by udieresis.hist;
+    sub f_adieresis by f_adieresis.hist;
+    sub f_odieresis by f_odieresis.hist;
+    sub f_udieresis by f_udieresis.hist;
+    sub germandbls by germandbls.hist;
+    sub comma by comma.hist;
+    sub period by period.hist;
+    sub semicolon by semicolon.hist;
+    sub colon by colon.hist;
+    sub question by question.hist;
+} hist_forms;
+
+# Spätmittelalterliche Ziffern in hist/ss20 ohne ss07: nur für Zahlen,
+# die nicht in römische Zahlzeichen umgewandelt wurden
+# (ab 4000, Dezimalzahlen, Uhrzeiten)
+lookup hist_numerals {
+    sub zero by zero.hist;
+    sub one by one.hist;
+    sub two by two.hist;
+    sub three by three.hist;
+    sub four by four.hist;
+    sub five by five.hist;
+    sub six by six.hist;
+    sub seven by seven.hist;
+    sub eight by eight.hist;
+    sub nine by nine.hist;
+} hist_numerals;
+
+# Kürzere Fahne vor Oberlängen
+lookup ASC_LONGS {
+    sub longs by longs.asc;
+} ASC_LONGS;
+
+lookup ASC_LONGSLONGS {
+    sub longs_longs by longs_longs.asc;
+} ASC_LONGSLONGS;
+
+lookup hist_longs_asc {
+    sub longs' lookup ASC_LONGS @ASCENDERS;
+    sub longs_longs' lookup ASC_LONGSLONGS @ASCENDERS;
+} hist_longs_asc;
+
+lookup ASC_FF {
+    sub f_f by f_f.asc;
+} ASC_FF;
+
+lookup calt_ff_asc {
+    sub f_f' lookup ASC_FF @ASCENDERS;
+} calt_ff_asc;
+
+# ---------------------------------------------------------------
+# ss01: Ligaturen mit hohem l (muss nach calt und hist laufen,
+# damit f.asc und longs.asc bereits gesetzt sind)
+# ---------------------------------------------------------------
+
+lookup ss01_asc_liga {
+    sub f.asc l.ss01 by f_l.ss01;
+    sub longs.asc l.ss01 by longs_l.ss01;
+} ss01_asc_liga;
+
+# ---------------------------------------------------------------
+# GPOS: Titulus (Makron) als Mark
+# ---------------------------------------------------------------
+
+markClass uni0304 <anchor 192 667> @TOP;
+
+lookup mark_titulus {
+    pos base a        <anchor 205 697> mark @TOP;
+    pos base e        <anchor 211 697> mark @TOP;
+    pos base i.hist   <anchor 105 697> mark @TOP;
+    pos base dotlessi <anchor 100 697> mark @TOP;
+    pos base m        <anchor 315 697> mark @TOP;
+    pos base n        <anchor 212 697> mark @TOP;
+    pos base o        <anchor 228 697> mark @TOP;
+    pos base p        <anchor 242 697> mark @TOP;
+    pos base q        <anchor 216 697> mark @TOP;
+    pos base u        <anchor 217 697> mark @TOP;
+    pos base A        <anchor 205 697> mark @TOP;
+    pos base E        <anchor 211 697> mark @TOP;
+    pos base I        <anchor 105 697> mark @TOP;
+    pos base M        <anchor 315 697> mark @TOP;
+    pos base N        <anchor 212 697> mark @TOP;
+    pos base O        <anchor 228 697> mark @TOP;
+    pos base P        <anchor 242 697> mark @TOP;
+    pos base Q        <anchor 216 697> mark @TOP;
+    pos base U        <anchor 217 697> mark @TOP;
+} mark_titulus;
+
+# ---------------------------------------------------------------
+# Features
+# ---------------------------------------------------------------
+
+feature ccmp {
+    lookup ccmp_dotless_i;
+} ccmp;
+
+feature liga {
+    lookup liga_carolingian;
+    lookup liga_collision;
+} liga;
+
+feature rlig {
+    lookup liga_collision;
+} rlig;
+
+feature calt {
+    lookup calt_short_f;
+    lookup calt_ff_asc;
+} calt;
+
+feature ss01 {
+    featureNames {
+        name "Tall ascenders";
+        name 3 1 0x0407 "Hohe Oberl\00e4ngen";
+    };
+    lookup ss01_tall_ascenders;
+    lookup ss01_asc_liga;
+} ss01;
+
+# ss02–ss04 reserviert: Capitalis quadrata, Unziale, Halbunziale
+# ss06 bewusst frei (bis 0.3 „Moderne Lesbarkeit“)
+
+feature ss05 {
+    featureNames {
+        name "Roman numerals";
+        name 3 1 0x0407 "R\00f6mische Zahlen";
+    };
+    lookup ROMAN_THOUSANDS;
+    lookup ROMAN_HUNDREDS;
+    lookup ROMAN_TENS;
+    lookup ROMAN_UNITS;
+    lookup ROMAN_PUNCT;
+    lookup ROMAN_DOT_MERGE;
+} ss05;
+
+feature ss07 {
+    featureNames {
+        name "Late medieval numerals";
+        name 3 1 0x0407 "Sp\00e4tmittelalterliche Ziffern";
+    };
+    lookup ss07_numerals;
+} ss07;
+
+feature hist {
+    lookup ROMAN_THOUSANDS;
+    lookup ROMAN_HUNDREDS;
+    lookup ROMAN_TENS;
+    lookup ROMAN_UNITS;
+    lookup ROMAN_PUNCT;
+    lookup ROMAN_DOT_MERGE;
+    lookup hist_ss_eszett;
+    lookup hist_longs;
+    lookup hist_longs_liga;
+    lookup hist_forms;
+    lookup hist_numerals;
+    lookup hist_longs_asc;
+} hist;
+
+feature ss20 {
+    featureNames {
+        name "Historical forms";
+        name 3 1 0x0407 "Historische Formen";
+    };
+    lookup ROMAN_THOUSANDS;
+    lookup ROMAN_HUNDREDS;
+    lookup ROMAN_TENS;
+    lookup ROMAN_UNITS;
+    lookup ROMAN_PUNCT;
+    lookup ROMAN_DOT_MERGE;
+    lookup hist_ss_eszett;
+    lookup hist_longs;
+    lookup hist_longs_liga;
+    lookup hist_forms;
+    lookup hist_numerals;
+    lookup hist_longs_asc;
+} ss20;
+
+feature mark {
+    lookup mark_titulus;
+} mark;

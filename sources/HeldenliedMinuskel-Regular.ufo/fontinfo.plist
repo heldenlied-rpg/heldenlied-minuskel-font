@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>ascender</key>
+	<integer>707</integer>
+	<key>capHeight</key>
+	<integer>707</integer>
+	<key>copyright</key>
+	<string>Copyright 2026 Richard Westebbe (https://github.com/heldenlied-rpg/heldenlied-minuskel-font), with Reserved Font Name "Heldenlied Minuskel".</string>
+	<key>descender</key>
+	<integer>-293</integer>
+	<key>familyName</key>
+	<string>Heldenlied Minuskel</string>
+	<key>guidelines</key>
+	<array>
+		<dict>
+			<key>angle</key>
+			<real>270.0</real>
+			<key>x</key>
+			<real>49.8037</real>
+			<key>y</key>
+			<real>207.0</real>
+		</dict>
+	</array>
+	<key>italicAngle</key>
+	<real>0.0</real>
+	<key>note</key>
+	<string>2026-8-21: Created with FontForge (http://fontforge.org)</string>
+	<key>openTypeHeadCreated</key>
+	<string>2026/08/21 21:13:12</string>
+	<key>openTypeHheaAscender</key>
+	<integer>960</integer>
+	<key>openTypeHheaDescender</key>
+	<integer>-310</integer>
+	<key>openTypeHheaLineGap</key>
+	<integer>0</integer>
+	<key>openTypeNameDescription</key>
+	<string>Heldenlied Minuskel is a Carolingian minuscule typeface for the fantasy role-playing game Heldenlied – Das Schicksal der Helden. It is modelled on the Folchart Psalter, written in St. Gallen around 872.</string>
+	<key>openTypeNameDesigner</key>
+	<string>Richard Westebbe</string>
+	<key>openTypeNameDesignerURL</key>
+	<string>https://heldenlied-rpg.de</string>
+	<key>openTypeNameLicense</key>
+	<string>This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://openfontlicense.org</string>
+	<key>openTypeNameLicenseURL</key>
+	<string>https://openfontlicense.org</string>
+	<key>openTypeNameManufacturerURL</key>
+	<string>https://heldenlied-rpg.de</string>
+	<key>openTypeNameRecords</key>
+	<array>
+		<dict>
+			<key>encodingID</key>
+			<integer>1</integer>
+			<key>languageID</key>
+			<integer>1031</integer>
+			<key>nameID</key>
+			<integer>10</integer>
+			<key>platformID</key>
+			<integer>3</integer>
+			<key>string</key>
+			<string>Heldenlied Minuskel ist eine karolingische Minuskelschrift für das Fantasy-Rollenspiel Heldenlied – Das Schicksal der Helden. Als Vorlage diente der Folchart-Psalter (St. Gallen, Stiftsbibliothek, Cod. Sang. 23, entstanden um 872).</string>
+		</dict>
+		<dict>
+			<key>encodingID</key>
+			<integer>1</integer>
+			<key>languageID</key>
+			<integer>1031</integer>
+			<key>nameID</key>
+			<integer>19</integer>
+			<key>platformID</key>
+			<integer>3</integer>
+			<key>string</key>
+			<string>Heldenlied – Das Schicksal der Helden</string>
+		</dict>
+	</array>
+	<key>openTypeNameSampleText</key>
+	<string>Heldenlied - the fate of heroes</string>
+	<key>openTypeNameVersion</key>
+	<string>Version 0.400</string>
+	<key>openTypeOS2CodePageRanges</key>
+	<array>
+		<integer>0</integer>
+	</array>
+	<key>openTypeOS2FamilyClass</key>
+	<array>
+		<integer>0</integer>
+		<integer>0</integer>
+	</array>
+	<key>openTypeOS2Selection</key>
+	<array>
+		<integer>7</integer>
+	</array>
+	<key>openTypeOS2Type</key>
+	<array/>
+	<key>openTypeOS2TypoAscender</key>
+	<integer>960</integer>
+	<key>openTypeOS2TypoDescender</key>
+	<integer>-310</integer>
+	<key>openTypeOS2TypoLineGap</key>
+	<integer>0</integer>
+	<key>openTypeOS2VendorID</key>
+	<string>Rich</string>
+	<key>openTypeOS2WeightClass</key>
+	<integer>400</integer>
+	<key>openTypeOS2WidthClass</key>
+	<integer>5</integer>
+	<key>openTypeOS2WinAscent</key>
+	<integer>960</integer>
+	<key>openTypeOS2WinDescent</key>
+	<integer>310</integer>
+	<key>postscriptBlueFuzz</key>
+	<integer>1</integer>
+	<key>postscriptBlueScale</key>
+	<real>0.039625</real>
+	<key>postscriptBlueShift</key>
+	<integer>15</integer>
+	<key>postscriptBlueValues</key>
+	<array>
+		<integer>-11</integer>
+		<integer>0</integer>
+		<integer>446</integer>
+		<integer>461</integer>
+		<integer>705</integer>
+		<integer>710</integer>
+		<integer>949</integer>
+		<integer>953</integer>
+	</array>
+	<key>postscriptFontName</key>
+	<string>HeldenliedMinuskel-Regular</string>
+	<key>postscriptFullName</key>
+	<string>Heldenlied Minuskel Regular</string>
+	<key>postscriptIsFixedPitch</key>
+	<false/>
+	<key>postscriptOtherBlues</key>
+	<array>
+		<integer>-304</integer>
+		<integer>-292</integer>
+		<integer>-124</integer>
+		<integer>-121</integer>
+	</array>
+	<key>postscriptStemSnapH</key>
+	<array>
+		<integer>75</integer>
+		<integer>80</integer>
+		<integer>87</integer>
+		<integer>93</integer>
+		<integer>97</integer>
+		<integer>103</integer>
+	</array>
+	<key>postscriptStemSnapV</key>
+	<array>
+		<integer>86</integer>
+		<integer>92</integer>
+		<integer>96</integer>
+		<integer>100</integer>
+		<integer>105</integer>
+		<integer>109</integer>
+		<integer>114</integer>
+		<integer>118</integer>
+	</array>
+	<key>postscriptUnderlinePosition</key>
+	<integer>-100</integer>
+	<key>postscriptUnderlineThickness</key>
+	<integer>49</integer>
+	<key>postscriptWeightName</key>
+	<string>Regular</string>
+	<key>styleMapFamilyName</key>
+	<string>Heldenlied Minuskel</string>
+	<key>styleMapStyleName</key>
+	<string>regular</string>
+	<key>styleName</key>
+	<string>Regular</string>
+	<key>unitsPerEm</key>
+	<integer>1000</integer>
+	<key>versionMajor</key>
+	<integer>0</integer>
+	<key>versionMinor</key>
+	<integer>400</integer>
+	<key>xHeight</key>
+	<integer>460</integer>
+</dict>
+</plist>

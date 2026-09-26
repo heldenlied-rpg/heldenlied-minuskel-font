@@ -1,0 +1,6 @@
+# Build-Abhängigkeiten für Heldenlied Minuskel
+# Installation: pip install -r requirements.txt
+fontmake
+fonttools[woff]
+fontbakery
+uharfbuzz

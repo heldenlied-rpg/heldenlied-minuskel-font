@@ -3,3 +3,18 @@
 *.bak
 __pycache__/
 fontbakery-report*
+
+# Temporäre fontmake-Ordner
+master_ufo/
+instance_ufo/
+sources/build/
+
+# Lokale Python-Umgebung
+.venv/
+venv/
+
+# Erzeugte Testdokumente
+tests/output/
+
+# Release-ZIPs (werden an GitHub-Releases angehängt)
+release/

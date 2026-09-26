@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="longs_l.ss01" format="2">
+  <advance width="505"/>
+  <anchor x="287" y="0" name="caret_1"/>
+  <outline>
+    <component base="longs.asc"/>
+    <component base="l.ss01" xOffset="287"/>
+  </outline>
+</glyph>

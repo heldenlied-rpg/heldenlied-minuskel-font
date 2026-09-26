@@ -15,12 +15,50 @@ Cod. Sang. 23, 9th century). It was created for the tabletop RPG
 "Heldenlied – Das Schicksal der Helden" (https://heldenlied-rpg.de)
 and is intended for titles, logos, handouts and atmospheric text.
 
-Glyphs are drawn in Inkscape and assembled in FontForge.
-OpenType features: liga, calt, stylistic sets (see README.md).
+Glyphs are drawn in Inkscape; the font source is a UFO, built with fontmake.
+OpenType features: liga, calt, hist, mark, stylistic sets (see README.md).
 
 
 ChangeLog
 ---------
+
+2026-09-26 (Richard Westebbe) Heldenlied Minuskel Version 0.4
+- Switched the source format from FontForge (.sfd) to UFO;
+  OpenType features are now maintained as plain text (features.fea)
+- Added build script (scripts/build.py) producing OTF, TTF and WOFF2,
+  optionally with Fontbakery checks and release ZIPs per format
+- Added automated feature tests and test documents (tests/)
+- Modern letterforms are now the default; the former ss06 forms became
+  the base glyphs, historical forms were renamed to *.hist
+- Historical forms moved to the new feature hist, mirrored in ss20:
+  long s, ss as ß, u/uu/i forms, umlauts with superscript e, historical
+  ß, punctuation, Roman numerals and late medieval numerals
+- New ss05: Roman numerals 1–3999 in additive notation (also part of
+  hist/ss20); previously 1–100 in calt. A period or comma directly after a
+  number merges into the closing punctus, dates become e.g. ·xxui·uiiii·dccclxxii·;
+  decimal numbers and times (3,5 / 12:30) stay unchanged
+- New ss07: late medieval numerals 5 and 7 (also part of hist/ss20);
+  ss07 takes precedence over Roman numerals, so hist + ss07 shows
+  late medieval digits instead of Roman numerals
+- ss06 is no longer used; ss02–ss04 are reserved for capital sets
+- ss01 now also applies to the capitals B, D, H, K and L
+- Added ccmp: dotless i before a combining macron
+- Titulus: same height on all letters (precomposed and combining),
+  stroke made thicker
+- Ligatures and shortened f crossbar now also apply to the capitals F
+  and T, which still show lowercase forms (e.g. Föhn, Tisch)
+- ss01: new ligatures f_l.ss01 and longs_l.ss01 for f/ſ before the tall l
+  (placeholder composites, final shapes to follow)
+- Removed redundant glyphs zero.ss06–nine.ss06 (except 5, 7) and s.ss06
+- Cleaned up tiny leftover curve segments from vectorisation
+  (overlapping path segments)
+- Capital macron vowels (Ā Ē Ī Ō Ū) no longer use nested components
+- Added ligature caret positions for all ligatures
+- TTF/WOFF2: smart dropout control enabled (unhinted font)
+- OS/2 fsSelection USE_TYPO_METRICS set again (lost in the UFO export)
+- Fixed style linking (styleMapFamilyName) and restored the German
+  name records for description and sample text
+- Fixed: "Auss…" at the start of a word was converted to ß
 
 2026-09-24 (Richard Westebbe) Heldenlied Minuskel Version 0.3
 - First public release
