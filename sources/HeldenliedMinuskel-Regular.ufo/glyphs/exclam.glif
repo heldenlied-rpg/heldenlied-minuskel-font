@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <glyph name="exclam" format="2">
-  <advance width="287"/>
+  <advance width="262"/>
   <unicode hex="0021"/>
   <outline>
     <contour>
@@ -86,41 +86,4 @@
       <point x="121.569" y="529.289"/>
     </contour>
   </outline>
-  <lib>
-    <dict>
-      <key>com.fontlab.hintData</key>
-      <dict>
-        <key>hhints</key>
-        <array>
-          <dict>
-            <key>position</key>
-            <integer>-12</integer>
-            <key>width</key>
-            <integer>21</integer>
-          </dict>
-          <dict>
-            <key>position</key>
-            <integer>155</integer>
-            <key>width</key>
-            <integer>97</integer>
-          </dict>
-        </array>
-        <key>vhints</key>
-        <array>
-          <dict>
-            <key>position</key>
-            <integer>62</integer>
-            <key>width</key>
-            <integer>119</integer>
-          </dict>
-          <dict>
-            <key>position</key>
-            <integer>62</integer>
-            <key>width</key>
-            <integer>103</integer>
-          </dict>
-        </array>
-      </dict>
-    </dict>
-  </lib>
 </glyph>

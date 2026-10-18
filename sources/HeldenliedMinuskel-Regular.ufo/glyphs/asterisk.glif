@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="asterisk" format="2">
+  <advance width="543.3057188909661"/>
+  <unicode hex="002A"/>
+  <outline>
+    <component base="referencemark" xOffset="14"/>
+  </outline>
+</glyph>

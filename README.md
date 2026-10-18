@@ -22,11 +22,18 @@ with a ready-made CSS file for websites.
 
 ## Status
 
-Version 0.4. Changes are listed in [FONTLOG.txt](FONTLOG.txt).
+Version 0.5. Changes are listed in [FONTLOG.txt](FONTLOG.txt).
+
+Character set: complete Google Fonts *Latin Core* (GF_Latin_Core),
+covering most Western, Central and Northern European languages,
+including Catalan (punt volat) and Turkish/Azerbaijani (dotted and
+dotless i).
+
+Spacing has been revised and the font has a first set of class-based
+kerning for letters and punctuation.
 
 Known limitations: capital letters still show lowercase forms (dedicated
-capital sets are planned as `ss02`–`ss04`), there is no kerning yet, and
-the fonts are unhinted.
+capital sets are planned as `ss02`–`ss04`), and the fonts are unhinted.
 
 ### Upgrading from 0.3
 
@@ -44,9 +51,12 @@ mirror `ss20` for applications without `hist` support).
 
 | Feature | Description |
 |---------|-------------|
+| `ccmp`  | Dotless i and j before accents above; ď ľ ť style caron after d, l, t |
 | `liga`  | Standard ligatures (t_i, t_u, t_t, f_f, f + umlaut), also after capital F and T |
 | `calt`  | Shortened f crossbar before ascenders |
-| `mark`  | Titulus (combining macron U+0304) positioned above letters |
+| `locl`  | Catalan: punt volat (l·l); Turkish, Azerbaijani, Crimean Tatar: dotted i (i → i̇) and dotless ı for capital I |
+| `mark`  | Combining accents (e.g. the titulus, U+0304) positioned above and below letters |
+| `kern`  | Class-based kerning for letters and punctuation |
 | `ss01`  | Tall ascenders for b, d, h, k, l (also B, D, H, K, L), with f/ſ + l ligatures |
 | `ss05`  | Roman numerals 1–3999 in minuscules, e.g. 12 → ·xii·, 872 → ·dccclxxii·. A period or comma after a number merges into the punctus, so dates become ·xxui·uiiii·dccclxxii· |
 | `ss07`  | Late medieval numerals (5 and 7); takes precedence over Roman numerals in `ss05`, `hist` and `ss20` |
@@ -79,9 +89,12 @@ time; use set 20 for the historical forms, as Word does not support `hist`.
 
 ## Source
 
-Glyphs are drawn in Inkscape (`sources/svg/`). The font source is a UFO
-(`sources/HeldenliedMinuskel-Regular.ufo`); all OpenType features are
-maintained as plain text in its `features.fea`.
+Glyphs are vectorised in Inkscape (`sources/svg/`, one SVG per glyph,
+named after the glyph) and imported into the UFO with
+`scripts/import_svg.py`. The font source is a UFO
+(`sources/HeldenliedMinuskel-Regular.ufo`), edited in Fontra; accented
+letters are built as composites. All OpenType features are maintained
+as plain text in its `features.fea`.
 
 ## Building
 
@@ -91,7 +104,8 @@ Requires Python 3. From the repository root:
     python scripts/build.py
 
 This writes OTF, TTF and WOFF2 to `fonts/`. Add `--check` to run
-Fontbakery on the result, `--tests` to run the feature tests, or
+Fontbakery on the result (reports in `fonts/fontbakery-report-*.json`),
+`--tests` to run the feature tests, or
 `--release` to create one ZIP per font format (OTF, TTF, webfont) in
 `release/` for attaching to a GitHub release.
 
@@ -116,7 +130,10 @@ analysing font files, writing and debugging the OpenType features, the
 build and test scripts, background research on historical letterforms,
 and drafting documentation. Scripts written with Claude also made purely
 technical changes to existing outlines (removing vectorisation artefacts,
-assembling composite glyphs, a uniform scaling of the titulus stroke).
+assembling composite glyphs, a uniform scaling of the titulus stroke,
+renaming glyphs, resetting sidebearings, snapping points that lay
+within 2.5 units of baseline, x-height or ascender onto these lines,
+adding missing extreme points and placing a few accent anchors).
 No glyph shapes were designed or drawn by AI.
 
 ## License

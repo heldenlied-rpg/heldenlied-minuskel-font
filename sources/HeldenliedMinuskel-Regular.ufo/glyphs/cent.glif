@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="cent" format="2">
+  <advance width="427.64142100000004"/>
+  <unicode hex="00A2"/>
+  <outline>
+    <component base="bar" xScale="0.5" yScale="0.9000000000000004" xOffset="189" yOffset="-91"/>
+    <component base="c"/>
+  </outline>
+</glyph>

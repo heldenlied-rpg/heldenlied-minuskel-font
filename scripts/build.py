@@ -52,7 +52,7 @@ def compile_fonts():
     # fontmake über "python -m" aufrufen, damit PATH keine Rolle spielt
     base = [sys.executable, "-m", "fontmake", "-u", SOURCE]
     run(base + ["-o", "otf", "--output-path", OTF])
-    run(base + ["-o", "ttf", "--output-path", TTF])
+    run(base + ["-o", "ttf", "--flatten-components", "--output-path", TTF])
 
 
 def postprocess(path):
@@ -63,9 +63,18 @@ def postprocess(path):
     for t in ("DSIG", "FFTM"):               # Altlasten entfernen
         if t in f:
             del f[t]
+    add_meta(f)
     if "glyf" in f:
         fix_unhinted(f)
     f.save(path)
+
+
+def add_meta(f):
+    """meta-Tabelle: Schrift ist für lateinische Schrift gestaltet (dlng) und unterstützt sie (slng)."""
+    from fontTools.ttLib import newTable
+    meta = newTable("meta")
+    meta.data = {"dlng": "Latn", "slng": "Latn"}
+    f["meta"] = meta
 
 
 def fix_unhinted(f):
@@ -89,22 +98,56 @@ def make_woff2():
 
 
 def check():
-    """Fontbakery je Datei einzeln aufrufen (sonst gelten OTF und TTF als eine Familie)."""
+    """Fontbakery je Datei einzeln aufrufen (sonst gelten OTF und TTF als eine Familie).
+
+    Der Bericht wird als JSON geschrieben und hier ausgewertet. Der Markdown-Reporter
+    von Fontbakery stürzt ab, wenn ein Font keine FAIL/WARN hat (UnboundLocalError
+    in ghmarkdown.py), und liefert dann einen Exit-Code ungleich 0.
+    """
+    import json
     exe = shutil.which("fontbakery")
     cmd = [exe] if exe else [sys.executable, "-m", "fontbakery"]
     failed = []
     for font in (OTF, TTF):
-        report = FONTS / f"fontbakery-report-{font.suffix[1:]}.md"
+        report = FONTS / f"fontbakery-report-{font.suffix[1:]}.json"
         print(f"\n=== Fontbakery: {font.name} ===")
-        r = subprocess.run([str(c) for c in cmd + ["check-universal", "--ghmarkdown", report, font]])
-        if r.returncode != 0:
+        subprocess.run([str(c) for c in cmd + ["check-universal", "-F", "--json", report, font]])
+        if not report.exists():
+            print("Kein Bericht erzeugt – Fontbakery ist abgebrochen.")
+            failed.append(font.name)
+            continue
+        problems = list(fontbakery_results(json.loads(report.read_text(encoding="utf-8"))))
+        for status, key in problems:
+            print(f"  {status:5} {key}")
+        if any(status in ("FAIL", "FATAL", "ERROR") for status, _ in problems):
             failed.append(font.name)
         print(f"Bericht: {report.relative_to(ROOT)}")
     if failed:
-        print("\nFontbakery meldet FAIL/FATAL für: " + ", ".join(failed))
+        print("\nFontbakery meldet FAIL/FATAL/ERROR für: " + ", ".join(failed))
     else:
         print("\nFontbakery: keine FAILs")
     return not failed
+
+
+def fontbakery_results(data):
+    """Alle Checks mit FAIL, FATAL, ERROR oder WARN aus dem JSON-Bericht."""
+    seen = set()
+    stack = [data]
+    while stack:
+        node = stack.pop()
+        if isinstance(node, dict):
+            status, key = node.get("result"), node.get("key")
+            if isinstance(status, str) and key and status in ("FATAL", "ERROR", "FAIL", "WARN"):
+                # key = ['<Section: …>', '<FontBakeryCheck:check/id>', [...]]
+                parts = key if isinstance(key, list) else [key]
+                name = next((p for p in parts if isinstance(p, str) and "Check:" in p), str(parts[0]))
+                name = re.sub(r"^<\w*Check:|>$", "", name)
+                if (status, str(name)) not in seen:
+                    seen.add((status, str(name)))
+                    yield status, str(name)
+            stack.extend(node.values())
+        elif isinstance(node, list):
+            stack.extend(node)
 
 
 def font_version():

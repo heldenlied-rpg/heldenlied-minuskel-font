@@ -1,64 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <glyph name="Q" format="2">
-  <advance width="433"/>
+  <advance width="447.62528"/>
   <unicode hex="0051"/>
-  <anchor x="216" y="697" name="top"/>
+  <anchor x="216.00000000000003" y="460" name="top"/>
   <outline>
-    <component base="q"/>
+    <component base="q" xOffset="2.4868995751603507e-14"/>
   </outline>
-  <lib>
-    <dict>
-      <key>com.fontlab.hintData</key>
-      <dict>
-        <key>hhints</key>
-        <array>
-          <dict>
-            <key>position</key>
-            <integer>-303</integer>
-            <key>width</key>
-            <integer>21</integer>
-          </dict>
-          <dict>
-            <key>position</key>
-            <integer>-10</integer>
-            <key>width</key>
-            <integer>92</integer>
-          </dict>
-          <dict>
-            <key>position</key>
-            <integer>355</integer>
-            <key>width</key>
-            <integer>92</integer>
-          </dict>
-          <dict>
-            <key>position</key>
-            <integer>440</integer>
-            <key>width</key>
-            <integer>20</integer>
-          </dict>
-        </array>
-        <key>vhints</key>
-        <array>
-          <dict>
-            <key>position</key>
-            <integer>7</integer>
-            <key>width</key>
-            <integer>82</integer>
-          </dict>
-          <dict>
-            <key>position</key>
-            <integer>296</integer>
-            <key>width</key>
-            <integer>114</integer>
-          </dict>
-          <dict>
-            <key>position</key>
-            <integer>301</integer>
-            <key>width</key>
-            <integer>119</integer>
-          </dict>
-        </array>
-      </dict>
-    </dict>
-  </lib>
 </glyph>

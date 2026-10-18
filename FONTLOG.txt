@@ -16,11 +16,47 @@ Cod. Sang. 23, 9th century). It was created for the tabletop RPG
 and is intended for titles, logos, handouts and atmospheric text.
 
 Glyphs are drawn in Inkscape; the font source is a UFO, built with fontmake.
-OpenType features: liga, calt, hist, mark, stylistic sets (see README.md).
+OpenType features: ccmp, liga, rlig, calt, locl, hist, mark, kern, stylistic sets
+(see README.md).
 
 
 ChangeLog
 ---------
+
+2026-10-18 (Richard Westebbe) Heldenlied Minuskel Version 0.5
+- Completed the Google Fonts Latin Core character set (GF_Latin_Core)
+- Added accented letters for Western, Central and Northern European
+  languages (acute, grave, circumflex, caron, breve, ring, ogonek,
+  cedilla, comma accent, double acute, dot accent, tilde), built as
+  composites, plus ø, ð, ł, đ and ħ
+- Added thorn and Thorn (lightened bowl compared to the original)
+- Added spacing accents, combining accents with mark anchors, and
+  symbols and punctuation: @ # % & * § ¶ © ® ™ °, dotted cross (U+205C),
+  € £ ¢ ¥ $, + − × ÷ = < >, brackets, braces, guillemets, ellipsis,
+  bullet, reference mark
+- New locl feature: Catalan punt volat (l·l via periodcentered.loclCAT)
+  and Turkish/Azerbaijani/Crimean Tatar dotted and dotless i
+- Glyph names now follow Fontra's naming (e.g. macroncomb instead of
+  uni0304, idotless instead of dotlessi); SVG sources renamed to match
+- Respaced all letters from a uniform starting point (tight letter
+  spacing kept on purpose)
+- First class-based kerning: about 1,360 pairs in 95 kerning groups for
+  letters and punctuation
+- ť, ď, ľ and Ľ use a dedicated caron (caroncomb.alt) instead of the
+  regular caron; a combining caron after d, l, L and t takes the same
+  form (ccmp)
+- i and j lose their dot before combining accents above (ccmp), e.g.
+  Dutch íj́
+- Mark anchors added to j and r and propagated to composite glyphs
+  during the build, so stacked accents attach correctly
+- On-curve points within 2.5 units of baseline, x-height and ascender
+  snapped onto these lines (scripts/snap_alignment.py); extreme point
+  added to the hook of ȷ (TTF exceeded usWinDescent)
+- Added a meta table (designed and supported script: Latn); shortened
+  the name table descriptions to under 200 characters
+- Build: TTF components are flattened; Fontbakery reports are written
+  as JSON (fonts/fontbakery-report-*.json) and summarised in the console
+- OFL.txt now matches the official license text word for word
 
 2026-09-26 (Richard Westebbe) Heldenlied Minuskel Version 0.4
 - Switched the source format from FontForge (.sfd) to UFO;

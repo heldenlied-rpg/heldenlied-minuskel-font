@@ -1,0 +1,1 @@
+Object.defineProperty(Navigator.prototype, 'keyboard', { get: () => undefined, configurable: true });

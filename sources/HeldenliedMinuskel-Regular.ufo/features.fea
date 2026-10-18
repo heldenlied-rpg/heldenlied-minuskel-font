@@ -9,6 +9,10 @@
 
 languagesystem DFLT dflt;
 languagesystem latn dflt;
+languagesystem latn CAT;
+languagesystem latn TRK;
+languagesystem latn AZE;
+languagesystem latn CRT;
 
 # ---------------------------------------------------------------
 # Klassen
@@ -21,16 +25,36 @@ languagesystem latn dflt;
                 A E I O U Y Adieresis Odieresis Udieresis];
 
 # ---------------------------------------------------------------
-# ccmp: i vor dem Titulus ohne Punkt
+# ccmp: i und j vor Akzenten oben (u. a. Titulus) ohne Punkt
 # ---------------------------------------------------------------
 
+@TOP_MARKS   = [acutecomb brevecomb caroncomb circumflexcomb dieresiscomb
+                dotaccentcomb gravecomb hungarumlautcomb macroncomb
+                ringcomb tildecomb commaturnedabovecomb];
+
 lookup ccmp_dotless_i_sub {
-    sub i by dotlessi;
+    sub i by idotless;
+    sub j by jdotless;
 } ccmp_dotless_i_sub;
 
 lookup ccmp_dotless_i {
-    sub i' lookup ccmp_dotless_i_sub uni0304;
+    sub [i j]' lookup ccmp_dotless_i_sub @TOP_MARKS;
 } ccmp_dotless_i;
+
+# ccmp: kombinierender Haken (U+030C) nach d, l, L, t in der Form von ď ľ Ľ ť
+lookup ccmp_caron_alt {
+    sub [d l L t] caroncomb' by caroncomb.alt;
+} ccmp_caron_alt;
+
+lookup locl_catalan {
+    sub l periodcentered' l by periodcentered.loclCAT;
+    sub L periodcentered' L by periodcentered.loclCAT.case;
+} locl_catalan;
+
+lookup locl_turkic {
+    sub i by idotaccent;
+    sub I by idotless;
+} locl_turkic;
 
 # ---------------------------------------------------------------
 # liga / calt (Standard)
@@ -39,6 +63,8 @@ lookup ccmp_dotless_i {
 lookup liga_carolingian {
     sub t i by t_i;
     sub t u by t_u;
+    sub a e by ae;
+    sub o e by oe;
     sub f odieresis by f_odieresis;
     sub f udieresis by f_udieresis;
     sub f adieresis by f_adieresis;
@@ -350,33 +376,6 @@ lookup ss01_asc_liga {
     sub longs.asc l.ss01 by longs_l.ss01;
 } ss01_asc_liga;
 
-# ---------------------------------------------------------------
-# GPOS: Titulus (Makron) als Mark
-# ---------------------------------------------------------------
-
-markClass uni0304 <anchor 192 667> @TOP;
-
-lookup mark_titulus {
-    pos base a        <anchor 205 697> mark @TOP;
-    pos base e        <anchor 211 697> mark @TOP;
-    pos base i.hist   <anchor 105 697> mark @TOP;
-    pos base dotlessi <anchor 100 697> mark @TOP;
-    pos base m        <anchor 315 697> mark @TOP;
-    pos base n        <anchor 212 697> mark @TOP;
-    pos base o        <anchor 228 697> mark @TOP;
-    pos base p        <anchor 242 697> mark @TOP;
-    pos base q        <anchor 216 697> mark @TOP;
-    pos base u        <anchor 217 697> mark @TOP;
-    pos base A        <anchor 205 697> mark @TOP;
-    pos base E        <anchor 211 697> mark @TOP;
-    pos base I        <anchor 105 697> mark @TOP;
-    pos base M        <anchor 315 697> mark @TOP;
-    pos base N        <anchor 212 697> mark @TOP;
-    pos base O        <anchor 228 697> mark @TOP;
-    pos base P        <anchor 242 697> mark @TOP;
-    pos base Q        <anchor 216 697> mark @TOP;
-    pos base U        <anchor 217 697> mark @TOP;
-} mark_titulus;
 
 # ---------------------------------------------------------------
 # Features
@@ -384,7 +383,20 @@ lookup mark_titulus {
 
 feature ccmp {
     lookup ccmp_dotless_i;
+    lookup ccmp_caron_alt;
 } ccmp;
+
+feature locl {
+    script latn;
+    language CAT;
+    lookup locl_catalan;
+    language TRK;
+    lookup locl_turkic;
+    language AZE;
+    lookup locl_turkic;
+    language CRT;
+    lookup locl_turkic;
+} locl;
 
 feature liga {
     lookup liga_carolingian;
@@ -467,6 +479,4 @@ feature ss20 {
     lookup hist_longs_asc;
 } ss20;
 
-feature mark {
-    lookup mark_titulus;
-} mark;
+

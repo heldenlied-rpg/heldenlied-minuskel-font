@@ -74,7 +74,7 @@ EXPECTED = [
     # HarfBuzz setzt i + kombinierendes Makron zum vorkomponierten ī zusammen
     ("i\u0304", {}, "imacron"),
     # Ohne vorkomponierte Form: Titulus als Mark über dem Buchstaben
-    ("n\u0304", {}, "n uni0304"),
+    ("n\u0304", {}, "n macroncomb"),
     ("Satz; Frage?", {"hist": 1}, "S a t z semicolon.hist space F r a g e question.hist"),
     ("12", {"ss05": 1}, "periodcentered x roman.null i.hist i.hist periodcentered"),
     ("Kapitel 12.", {"ss05": 1},
